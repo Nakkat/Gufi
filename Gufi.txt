@@ -1,0 +1,27 @@
+Endpoints
+
+TipoUsuario/TiposEvento
+
+- Listar todos
+- Cadastrar
+- Atualizaar
+- Deletar
+- Buscar por Id
+
+Usuarios
+
+- Crud + BuscarId
+- Login
+- Listar os convites/presenças
+- Convidar alguém
+
+Eventos
+
+- Crud + BuscarId
+- Inscrição em evento
+- Listar meus eventos
+- Convidar
+- Aprovar presença
+
+Instituição
+- Crud + Buscar por Id
