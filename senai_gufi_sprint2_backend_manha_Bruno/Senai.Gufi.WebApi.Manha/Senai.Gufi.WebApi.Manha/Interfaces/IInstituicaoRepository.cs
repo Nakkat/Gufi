@@ -10,9 +10,9 @@ namespace Senai.Gufi.WebApi.Manha.Interfaces
     {
         List<Instituicao> Listar();
 
-        void Cadastrar(Instituicao novoIntituicao);
+        void Cadastrar(Instituicao novaIntituicao);
 
-        void Atualizar(int id, Instituicao IntituicaoAtualizada);
+        void Atualizar(int id, Instituicao intituicaoAtualizada);
 
         void Deletar(int id);
 

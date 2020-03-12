@@ -43,7 +43,6 @@ namespace Senai.Gufi.WebApi.Manha.Repositories
         /// Cadastrar um novo tipo de evento
         /// </summary>
         /// <param name="novoTipoEvento">Objeto novoTipoEvento que será cadastrado</param>
-        
         public void Cadastrar(TipoEvento novoTipoEvento)
         {
             ctx.TipoEvento.Add(novoTipoEvento);

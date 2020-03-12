@@ -18,66 +18,70 @@ namespace Senai.Gufi.WebApi.Manha.Controllers
     // Indicando que meu tipo da requisição vai ser em HTTP API
     [ApiController]
     [Authorize]
-    public class TiposEventoController : ControllerBase
+    public class InstituicoesController : ControllerBase
     {
         // crio uma variável para minha interface
-        private ITipoEventoRepository _tipoEventoRepository { get; set; }
+        private IInstituicaoRepository _instituicaoRepository { get; set; }
 
-        public TiposEventoController()
+        public InstituicoesController()
         {
             // Instancio meu repositório na minha variável
-            _tipoEventoRepository = new TipoEventoRepository();
+            _instituicaoRepository = new InstituicaoRepository();
         }
 
         /// <summary>
-        /// Listar os tipos de eventos
+        /// Listar as insituições
         /// </summary>
         /// <returns>Retorna uma lista e um status code 200</returns>
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult Get()
         {
             try
             {
-                return Ok(_tipoEventoRepository.Listar());
+                return Ok(_instituicaoRepository.Listar());
             }
             catch (Exception erro)
             {
                 return BadRequest(erro);
             }
-            
+
         }
 
         /// <summary>
-        /// Buscar um tipo de evento pelo ID
+        /// Buscar uma Instituição pelo ID
         /// </summary>
-        /// <param name="id">Id do tipo do evento que será buscado</param>
-        /// <returns>Retorna um tipo de evento específico pelo Id</returns>
+        /// <param name="id">Id da Instituição que será buscado</param>
+        /// <returns>Retorna uma Instituição específico pelo Id</returns>
+
         [Authorize(Roles = "Administrador")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             try
             {
-                return Ok(_tipoEventoRepository.BuscarPorId(id));
+                return Ok(_instituicaoRepository.BuscarPorId(id));
             }
             catch (Exception erro)
             {
                 return BadRequest(erro);
             }
+
         }
 
         /// <summary>
-        /// Cadastrar um novo tipo de evento
+        /// Cadastrar uma nova instituição
         /// </summary>
-        /// <param name="novoTipoEvento">Objeto novoTipoEvento que será cadastrado</param>
+        /// <param name="novaInstituicao">Objeto novaInstituicao que será cadastrado</param>
         /// <returns>Retorna um status code 201</returns>
         [Authorize(Roles = "Administrador")]
         [HttpPost]
-        public IActionResult Post(TipoEvento novoTipoEvento)
+        public IActionResult Post(Instituicao novaInstituicao)
         {
             try
             {
-                _tipoEventoRepository.Cadastrar(novoTipoEvento);
+                _instituicaoRepository.Cadastrar(novaInstituicao);
+
                 // Created
                 return StatusCode(201);
             }
@@ -85,21 +89,22 @@ namespace Senai.Gufi.WebApi.Manha.Controllers
             {
                 return BadRequest(erro);
             }
+
         }
 
         /// <summary>
-        /// Atualiza um tipo de evento
+        /// Atualiza uma instituição
         /// </summary>
-        /// <param name="id">Id do tipo do evento que será buscado</param>
-        /// <param name="tipoEventoAtualizado">Objeto tipoEventoAtualizado que será alterado</param>
+        /// <param name="id">Id da Instituição que será buscado</param>
+        /// <param name="instituicaoAtualizado">Objeto instituicaoAtualizado que será alterado</param>
         /// <returns>Retorna um status code 204</returns>
         [Authorize(Roles = "Administrador")]
         [HttpPut("{id}")]
-        public IActionResult Put(int id, TipoEvento tipoEventoAtualizado)
+        public IActionResult Put(int id, Instituicao instituicaoAtualizado)
         {
             try
             {
-                _tipoEventoRepository.Atualizar(id, tipoEventoAtualizado);
+                _instituicaoRepository.Atualizar(id, instituicaoAtualizado);
                 // No content
                 return StatusCode(204);
             }
@@ -111,9 +116,9 @@ namespace Senai.Gufi.WebApi.Manha.Controllers
         }
 
         /// <summary>
-        /// Deletar um tipo de evento
+        /// Deletar uma instituição
         /// </summary>
-        /// <param name="id">Id do tipo de evento que será buscado</param>
+        /// <param name="id">Id da instituição que será buscado</param>
         /// <returns>Retorna um status code 204</returns>
         [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
@@ -121,7 +126,7 @@ namespace Senai.Gufi.WebApi.Manha.Controllers
         {
             try
             {
-                _tipoEventoRepository.Deletar(id);
+                _instituicaoRepository.Deletar(id);
 
                 return StatusCode(204);
             }
@@ -129,7 +134,7 @@ namespace Senai.Gufi.WebApi.Manha.Controllers
             {
                 return BadRequest(erro);
             }
-          
+
         }
     }
 }

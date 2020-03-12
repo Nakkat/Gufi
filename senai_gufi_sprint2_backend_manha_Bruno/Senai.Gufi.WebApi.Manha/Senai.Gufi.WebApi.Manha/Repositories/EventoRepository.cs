@@ -1,4 +1,5 @@
-﻿using Senai.Gufi.WebApi.Manha.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.Gufi.WebApi.Manha.Domains;
 using Senai.Gufi.WebApi.Manha.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -14,39 +15,40 @@ namespace Senai.Gufi.WebApi.Manha.Repositories
         GufiContext ctx = new GufiContext();
 
         /// <summary>
-        /// Atualiza um tipo de evento
+        /// Atualiza um evento
         /// </summary>
-        /// <param name="id">Id do tipo evento que será buscado</param>
-        /// <param name="tipoEventoAtualizado">Objeto tipoEventoAtualizado que será alterado</param>
-        public void Atualizar(int id, Evento EventoAtualizado)
+        /// <param name="id">Id do evento que será buscado</param>
+        /// <param name="eventoAtualizado">Objeto eventoAtualizado que será alterado</param>
+        public void Atualizar(int id, Evento eventoAtualizado)
         {
-            Evento EventoBuscado = ctx.Evento.Find(id);
+            Evento eventoBuscado = ctx.Evento.Find(id);
 
-            EventoBuscado.NomeEvento = EventoAtualizado.NomeEvento;
-            EventoBuscado.NomeEvento = EventoAtualizado.NomeEvento;
-            EventoBuscado.NomeEvento = EventoAtualizado.NomeEvento;
-            EventoBuscado.NomeEvento = EventoAtualizado.NomeEvento;
-            EventoBuscado.NomeEvento = EventoAtualizado.NomeEvento;
+            eventoBuscado.NomeEvento = eventoAtualizado.NomeEvento;
+            eventoBuscado.IdInstituicao = eventoAtualizado.IdInstituicao;
+            eventoBuscado.IdTipoEvento = eventoAtualizado.IdTipoEvento;
+            eventoBuscado.AcessoLivre = eventoAtualizado.AcessoLivre;
+            eventoBuscado.DataEvento = eventoAtualizado.DataEvento;
+            eventoBuscado.Descricao = eventoAtualizado.Descricao;
 
-            ctx.Evento.Update(EventoBuscado);
+            ctx.Evento.Update(eventoBuscado);
 
             ctx.SaveChanges();
         }
 
         /// <summary>
-        /// Buscar um tipo de evento por Id
+        /// Buscar um evento por Id
         /// </summary>
         /// <param name="id">Id do tipo de evento que será buscado</param>
-        /// <returns>Retorna um tipo de evento específico pelo Id</returns>
+        /// <returns>Retorna um evento específico pelo Id</returns>
         public Evento BuscarPorId(int id)
         {
             return ctx.Evento.FirstOrDefault(te => te.IdEvento == id);
         }
 
         /// <summary>
-        /// Cadastrar um novo tipo de evento
+        /// Cadastrar um novo evento
         /// </summary>
-        /// <param name="novoEvento">Objeto novoTipoEvento que será cadastrado</param>
+        /// <param name="novoEvento">Objeto novoEvento que será cadastrado</param>
 
         public void Cadastrar(Evento novoEvento)
         {
@@ -56,9 +58,9 @@ namespace Senai.Gufi.WebApi.Manha.Repositories
         }
 
         /// <summary>
-        /// Deletar um tipo de evento
+        /// Deletar um evento
         /// </summary>
-        /// <param name="id">Id do tipo de evento que será buscado</param>
+        /// <param name="id">Id do evento que será buscado</param>
         public void Deletar(int id)
         {
             ctx.Evento.Remove(BuscarPorId(id));
@@ -67,12 +69,12 @@ namespace Senai.Gufi.WebApi.Manha.Repositories
         }
 
         /// <summary>
-        /// Listar tipos de eventos
+        /// Listar eventos
         /// </summary>
-        /// <returns>Retorna uma lista dos tipos de eventos</returns>
+        /// <returns>Retorna uma lista dos eventos</returns>
         public List<Evento> Listar()
         {
-            return ctx.Evento.ToList();
+            return ctx.Evento.Include(e => e.IdInstituicaoNavigation).Include(e => e.IdTipoEventoNavigation).ToList();
         }
     }
 }

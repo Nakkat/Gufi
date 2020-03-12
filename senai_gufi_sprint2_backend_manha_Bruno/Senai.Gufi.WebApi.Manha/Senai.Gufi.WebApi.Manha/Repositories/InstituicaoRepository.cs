@@ -14,36 +14,37 @@ namespace Senai.Gufi.WebApi.Manha.Repositories
         GufiContext ctx = new GufiContext();
 
         /// <summary>
-        /// Atualiza um tipo de evento
+        /// Atualiza uma instituição
         /// </summary>
-        /// <param name="id">Id do tipo evento que será buscado</param>
-        /// <param name="tipoEventoAtualizado">Objeto tipoEventoAtualizado que será alterado</param>
-        public void Atualizar(int id, Instituicao InstituicaoAtualizada)
+        /// <param name="id">Id da instituição que será buscado</param>
+        /// <param name="instituicaoAtualizada">Objeto instituicaoAtualizada que será alterada</param>
+        public void Atualizar(int id, Instituicao instituicaoAtualizada)
         {
-            Instituicao InstituicaoBuscado = ctx.Instituicao.Find(id);
+            Instituicao instituicaoBuscada = ctx.Instituicao.Find(id);
 
-            InstituicaoBuscado.Cnpj = InstituicaoAtualizada.Cnpj;
+            instituicaoBuscada.Cnpj = instituicaoAtualizada.Cnpj;
+            instituicaoBuscada.NomeFantasia = instituicaoAtualizada.NomeFantasia;
+            instituicaoBuscada.Endereco = instituicaoAtualizada.Endereco;
 
-            ctx.Instituicao.Update(InstituicaoBuscado);
+            ctx.Instituicao.Update(instituicaoBuscada);
 
             ctx.SaveChanges();
         }
 
         /// <summary>
-        /// Buscar um tipo de evento por Id
+        /// Buscar uma instituição por Id
         /// </summary>
-        /// <param name="id">Id do tipo de evento que será buscado</param>
-        /// <returns>Retorna um tipo de evento específico pelo Id</returns>
+        /// <param name="id">Id da instituição que será buscado</param>
+        /// <returns>Retorna uma instituição específica pelo Id</returns>
         public Instituicao BuscarPorId(int id)
         {
             return ctx.Instituicao.FirstOrDefault(te => te.IdInstituicao == id);
         }
 
         /// <summary>
-        /// Cadastrar um novo tipo de evento
+        /// Cadastrar uma nova instituição
         /// </summary>
-        /// <param name="novoInstituicao">Objeto novoTipoEvento que será cadastrado</param>
-
+        /// <param name="novaInstituicao">Objeto novaInstituicao que será cadastrado</param>
         public void Cadastrar(Instituicao novaInstituicao)
         {
             ctx.Instituicao.Add(novaInstituicao);
@@ -52,9 +53,9 @@ namespace Senai.Gufi.WebApi.Manha.Repositories
         }
 
         /// <summary>
-        /// Deletar um tipo de evento
+        /// Deletar uma instituição
         /// </summary>
-        /// <param name="id">Id do tipo de evento que será buscado</param>
+        /// <param name="id">Id da insituição que será buscado</param>
         public void Deletar(int id)
         {
             ctx.Instituicao.Remove(BuscarPorId(id));
@@ -63,9 +64,9 @@ namespace Senai.Gufi.WebApi.Manha.Repositories
         }
 
         /// <summary>
-        /// Listar tipos de eventos
+        /// Listar as instituições
         /// </summary>
-        /// <returns>Retorna uma lista dos tipos de eventos</returns>
+        /// <returns>Retorna uma lista das instituições</returns>
         public List<Instituicao> Listar()
         {
             return ctx.Instituicao.ToList();
