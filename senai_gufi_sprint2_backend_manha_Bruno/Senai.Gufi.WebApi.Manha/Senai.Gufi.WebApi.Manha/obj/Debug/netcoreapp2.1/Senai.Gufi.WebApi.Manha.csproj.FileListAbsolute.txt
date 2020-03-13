@@ -29,3 +29,5 @@ C:\Users\Bruno\Desktop\Gufi\senai_gufi_sprint2_backend_manha_Bruno\Senai.Gufi.We
 C:\Users\Bruno\Desktop\Gufi\senai_gufi_sprint2_backend_manha_Bruno\Senai.Gufi.WebApi.Manha\Senai.Gufi.WebApi.Manha\bin\Debug\netcoreapp2.1\libman.json
 C:\Users\Bruno\Desktop\Gufi\senai_gufi_sprint2_backend_manha_Bruno\Senai.Gufi.WebApi.Manha\Senai.Gufi.WebApi.Manha\bin\Debug\netcoreapp2.1\Senai.Gufi.WebApi.Manha.xml
 C:\Users\Bruno\Desktop\Gufi\senai_gufi_sprint2_backend_manha_Bruno\Senai.Gufi.WebApi.Manha\Senai.Gufi.WebApi.Manha\obj\Debug\netcoreapp2.1\Senai.Gufi.WebApi.Manha.xml
+C:\Users\51564241807\Desktop\Gufi\senai_gufi_sprint2_backend_manha_Bruno\Senai.Gufi.WebApi.Manha\Senai.Gufi.WebApi.Manha\bin\Debug\netcoreapp2.1\Senai.Gufi.WebApi.Manha.xml
+C:\Users\51564241807\Desktop\Gufi\senai_gufi_sprint2_backend_manha_Bruno\Senai.Gufi.WebApi.Manha\Senai.Gufi.WebApi.Manha\obj\Debug\netcoreapp2.1\Senai.Gufi.WebApi.Manha.xml

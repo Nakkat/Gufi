@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Senai.Gufi.WebApi.Manha.Domains
 {
@@ -11,6 +12,7 @@ namespace Senai.Gufi.WebApi.Manha.Domains
         }
 
         public int IdTipoUsuario { get; set; }
+        [Required(ErrorMessage = "Informe o tipo do usuário")]
         public string TituloTipoUsuario { get; set; }
 
         public ICollection<Usuario> Usuario { get; set; }

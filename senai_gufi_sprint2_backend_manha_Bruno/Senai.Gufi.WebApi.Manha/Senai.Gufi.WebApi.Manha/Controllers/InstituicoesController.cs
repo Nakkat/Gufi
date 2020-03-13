@@ -96,15 +96,15 @@ namespace Senai.Gufi.WebApi.Manha.Controllers
         /// Atualiza uma instituição
         /// </summary>
         /// <param name="id">Id da Instituição que será buscado</param>
-        /// <param name="instituicaoAtualizado">Objeto instituicaoAtualizado que será alterado</param>
+        /// <param name="instituicaoAtualizada">Objeto instituicaoAtualizado que será alterado</param>
         /// <returns>Retorna um status code 204</returns>
         [Authorize(Roles = "Administrador")]
         [HttpPut("{id}")]
-        public IActionResult Put(int id, Instituicao instituicaoAtualizado)
+        public IActionResult Put(int id, Instituicao instituicaoAtualizada)
         {
             try
             {
-                _instituicaoRepository.Atualizar(id, instituicaoAtualizado);
+                _instituicaoRepository.Atualizar(id, instituicaoAtualizada);
                 // No content
                 return StatusCode(204);
             }

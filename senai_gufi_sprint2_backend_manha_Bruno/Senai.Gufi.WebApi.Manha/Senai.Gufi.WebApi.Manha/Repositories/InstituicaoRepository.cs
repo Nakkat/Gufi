@@ -45,6 +45,7 @@ namespace Senai.Gufi.WebApi.Manha.Repositories
         /// Cadastrar uma nova instituição
         /// </summary>
         /// <param name="novaInstituicao">Objeto novaInstituicao que será cadastrado</param>
+        
         public void Cadastrar(Instituicao novaInstituicao)
         {
             ctx.Instituicao.Add(novaInstituicao);

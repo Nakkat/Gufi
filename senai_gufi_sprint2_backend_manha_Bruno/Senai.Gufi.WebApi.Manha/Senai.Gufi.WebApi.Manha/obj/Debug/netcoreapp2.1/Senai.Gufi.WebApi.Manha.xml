@@ -64,7 +64,7 @@
             Atualiza uma instituição
             </summary>
             <param name="id">Id da Instituição que será buscado</param>
-            <param name="instituicaoAtualizado">Objeto instituicaoAtualizado que será alterado</param>
+            <param name="instituicaoAtualizada">Objeto instituicaoAtualizado que será alterado</param>
             <returns>Retorna um status code 204</returns>
         </member>
         <member name="M:Senai.Gufi.WebApi.Manha.Controllers.InstituicoesController.Delete(System.Int32)">

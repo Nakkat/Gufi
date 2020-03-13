@@ -47,17 +47,39 @@ namespace Senai.Gufi.WebApi.Manha.Controllers
             }
         }
 
-        /// <summary>
-        /// Lista de presenças confirmadas e não confirmadas
-        /// </summary>
-        /// <returns>Retorna um status code 200</returns>
-        [Authorize(Roles = "Administrador")]
-        [HttpGet("{status}")]
-        public IActionResult GetByStatus(string status)
+       /// <summary>
+       /// Cadastra uma nova presença
+       /// </summary>
+       /// <param name="novaPresenca">Objeto novaPresenca que será cadastrado</param>
+       /// <returns></returns>
+ 
+        [HttpPost]
+        public IActionResult InscricaoConvite(Presenca novaPresenca)
         {
             try
             {
-                return Ok(_presencaRepository.Aprovacao(status));
+                _presencaRepository.InscricaoConvite(novaPresenca);
+                return StatusCode(201);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+        /// <summary>
+        /// Alterar a situação de uma presença
+        /// </summary>
+        /// <param name="id">Id da presença que será buscado</param>
+        /// <param name="statusAlterado">Objeto statusAlterado que será atualizado</param>
+        /// <returns></returns>
+        [HttpPut]
+        public IActionResult Situacao(int id, Presenca statusAlterado)
+        {
+            try
+            {
+                _presencaRepository.Situacao(id, statusAlterado);
+                return StatusCode(204);
             }
             catch (Exception erro)
             {
