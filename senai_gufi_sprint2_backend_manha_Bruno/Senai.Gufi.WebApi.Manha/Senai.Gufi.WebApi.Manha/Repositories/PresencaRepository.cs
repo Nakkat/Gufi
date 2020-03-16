@@ -31,27 +31,20 @@ namespace Senai.Gufi.WebApi.Manha.Repositories
         /// <param name="novaPresenca">Objeto novaPresenca que será cadastrado</param>
         public void InscricaoConvite(Presenca novaPresenca)
         {
-            List<Presenca> listaPresenca = ListarMeusEventos(novaPresenca.IdUsuario);
-            foreach (var presencaUnica in listaPresenca)
+            if (ctx.Presenca.FirstOrDefault(p => p.IdUsuario == novaPresenca.IdUsuario && p.IdEvento == novaPresenca.IdEvento) == null)
             {
-                if (presencaUnica.IdEvento != novaPresenca.IdUsuario)
-                {
-                    novaPresenca.Situacao = "Aguardando";
-                    ctx.Presenca.Add(novaPresenca);
-                    ctx.SaveChanges();
-                }
-                
-            } 
-        
+                ctx.Presenca.Add(novaPresenca);
+            }
+            ctx.SaveChanges();
         }
-            
+
         /// <summary>
         /// Listar presenças
         /// </summary>
         /// <returns>Retorna uma lista de presenças</returns>
         public List<Presenca> Listar()
         {
-            return ctx.Presenca.Include(p => p.IdEventoNavigation).ToList();
+            return ctx.Presenca.ToList();
         }
 
         /// <summary>
@@ -61,7 +54,7 @@ namespace Senai.Gufi.WebApi.Manha.Repositories
         /// <returns></returns>
         public List<Presenca> ListarMeusEventos(int? id)
         {
-            return ctx.Presenca.Include("IdEventoNavigation").Include("IdUsuarioNavigation").Where(p => p.IdUsuarioNavigation.IdUsuario == id).ToList();
+            return ctx.Presenca.Where(p => p.IdUsuarioNavigation.IdUsuario == id).ToList();
         }
 
         /// <summary>

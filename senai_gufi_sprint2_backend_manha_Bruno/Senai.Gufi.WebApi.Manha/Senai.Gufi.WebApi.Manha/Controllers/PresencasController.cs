@@ -33,7 +33,7 @@ namespace Senai.Gufi.WebApi.Manha.Controllers
         /// Lista de presenças
         /// </summary>
         /// <returns>Retorna um status code 200</returns>
-        [Authorize(Roles= "Administrador")]
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -47,12 +47,50 @@ namespace Senai.Gufi.WebApi.Manha.Controllers
             }
         }
 
-       /// <summary>
-       /// Cadastra uma nova presença
-       /// </summary>
-       /// <param name="novaPresenca">Objeto novaPresenca que será cadastrado</param>
-       /// <returns></returns>
- 
+        /// <summary>
+        /// Lista de presenças pelo Id de um usuário específico
+        /// </summary>
+        /// <param name="id">Id do usuário que será buscad</param>
+        /// <returns>Retorna uma lista e um status code 200</returns>
+        [Authorize(Roles = "Administrador")]
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            try
+            {
+                return Ok(_presencaRepository.ListarMeusEventos(id));
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+        /// <summary>
+        /// Lista de presenças confirmadas e não confirmadas
+        /// </summary>
+        /// <param name="status">Objeto status que será buscado</param>
+        /// <returns>Retorna uma lista e um status code 200</returns>
+        [Authorize(Roles = "Administrador")]
+        [HttpGet("situacao/{status}")]
+        public IActionResult GetByStatus(string status)
+        {
+            try
+            {
+                return Ok(_presencaRepository.Aprovacao(status));
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+        /// <summary>
+        /// Cadastra uma nova presença
+        /// </summary>
+        /// <param name="novaPresenca">Objeto novaPresenca que será cadastrado</param>
+        /// <returns></returns>
+
         [HttpPost]
         public IActionResult InscricaoConvite(Presenca novaPresenca)
         {
@@ -73,7 +111,9 @@ namespace Senai.Gufi.WebApi.Manha.Controllers
         /// <param name="id">Id da presença que será buscado</param>
         /// <param name="statusAlterado">Objeto statusAlterado que será atualizado</param>
         /// <returns></returns>
-        [HttpPut]
+
+        [Authorize(Roles = "Administrador")]
+        [HttpPut("{id}")]
         public IActionResult Situacao(int id, Presenca statusAlterado)
         {
             try

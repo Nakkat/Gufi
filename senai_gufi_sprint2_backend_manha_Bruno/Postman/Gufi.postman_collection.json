@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e3de4216-321d-45b8-8246-7958b0009f39",
+		"_postman_id": "0886f048-242a-4dcc-9740-d4f324716094",
 		"name": "Gufi",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -307,6 +307,16 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDEwNjUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.Mr_IVX2EzRtI4HLuOl0UGamih6kcEF8PAzvellwAYV8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -339,6 +349,16 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQzNjg5OTIsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.x0AHODlPqgk953Xk89vgjc9y8WuXBNa3V6CuQXbWSU4",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -351,7 +371,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/presencas/Confirmada",
+							"raw": "http://localhost:5000/api/presencas/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -360,7 +380,130 @@
 							"path": [
 								"api",
 								"presencas",
-								"Confirmada"
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inscrever-se no evento ou convidar outro usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQzNjg5OTIsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.x0AHODlPqgk953Xk89vgjc9y8WuXBNa3V6CuQXbWSU4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"IdEvento\": 1,\n\t\"IdUsuario\":1,\n\t\"Situacao\":\"Confirmada\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/presencas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"presencas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar situação do evento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQzNjg5OTIsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.x0AHODlPqgk953Xk89vgjc9y8WuXBNa3V6CuQXbWSU4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"IdEvento\":1,\n\t\"IdUsuario\":1,\n\t\"Situacao\":\"Não Confirmada\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/presencas/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"presencas",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar meus eventos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQzNjg5OTIsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.x0AHODlPqgk953Xk89vgjc9y8WuXBNa3V6CuQXbWSU4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/presencas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"presencas",
+								"1"
 							]
 						}
 					},
@@ -375,6 +518,16 @@
 				{
 					"name": "Listar eventos",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDAxOTUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.sPI4gBOA2jqx2S1NBERvRsJHhbRE1b5Xhc24A1e5epE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -395,6 +548,16 @@
 				{
 					"name": "Listar evento por Id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDAxOTUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.sPI4gBOA2jqx2S1NBERvRsJHhbRE1b5Xhc24A1e5epE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -416,11 +579,26 @@
 				{
 					"name": "Cadastrar um novo evento",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDAxOTUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.sPI4gBOA2jqx2S1NBERvRsJHhbRE1b5Xhc24A1e5epE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"IdTipoEvento\":\"\",\n\t\"IdInstituicao\":\"\",\n\t\"NomeEvento\":\"\",\n\t\"AcessoLivre\":\"\",\n\t\"DataEvento\":\"\",\n\t\"Descricao\":\"\"\n}"
+							"raw": "{\n\t\"IdTipoEvento\":\"1\",\n\t\"IdInstituicao\":\"1\",\n\t\"NomeEvento\":\"c\",\n\t\"AcessoLivre\": 0,\n\t\"DataEvento\":\"2020/02/03\",\n\t\"Descricao\":\"f\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:5000/api/eventos/",
@@ -441,14 +619,29 @@
 				{
 					"name": "Alterar um evento",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDAxOTUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.sPI4gBOA2jqx2S1NBERvRsJHhbRE1b5Xhc24A1e5epE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"IdTipoEvento\":\"\",\n\t\"IdInstituicao\":\"\",\n\t\"NomeEvento\":\"\",\n\t\"AcessoLivre\":\"\",\n\t\"DataEvento\":\"\",\n\t\"Descricao\":\"\"\n}"
+							"raw": "{\n\t\"IdTipoEvento\":\"1\",\n\t\"IdInstituicao\":\"1\",\n\t\"NomeEvento\":\"d\",\n\t\"AcessoLivre\": 1,\n\t\"DataEvento\":\"2020/02/03\",\n\t\"Descricao\":\"f\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/eventos/4",
+							"raw": "http://localhost:5000/api/eventos/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -457,7 +650,7 @@
 							"path": [
 								"api",
 								"eventos",
-								"4"
+								"5"
 							]
 						}
 					},
@@ -466,6 +659,16 @@
 				{
 					"name": "Deletar um evento",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDAxOTUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.sPI4gBOA2jqx2S1NBERvRsJHhbRE1b5Xhc24A1e5epE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -473,7 +676,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/eventos/4",
+							"raw": "http://localhost:5000/api/eventos/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -482,7 +685,7 @@
 							"path": [
 								"api",
 								"eventos",
-								"4"
+								"5"
 							]
 						}
 					},
@@ -497,6 +700,16 @@
 				{
 					"name": "Listar usuários",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDEwNjUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.Mr_IVX2EzRtI4HLuOl0UGamih6kcEF8PAzvellwAYV8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -517,6 +730,16 @@
 				{
 					"name": "Listar usuário por Id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDEwNjUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.Mr_IVX2EzRtI4HLuOl0UGamih6kcEF8PAzvellwAYV8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -536,8 +759,18 @@
 					"response": []
 				},
 				{
-					"name": "Alterar um usuário",
+					"name": "Cadastrar um usuário",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDEwNjUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.Mr_IVX2EzRtI4HLuOl0UGamih6kcEF8PAzvellwAYV8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -549,7 +782,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"IdTipoUsuario\":\"\",\n\t\"NomeUsuario\":\"\",\n\t\"Email\":\"\",\n\t\"Senha\":\"\",\n\t\"DataCadastro\":\"\",\n\t\"Gemero\":\"\"\n}",
+							"raw": "{\n\t\"IdTipoUsuario\":\"1\",\n\t\"Nome\":\"a\",\n\t\"Email\":\"b\",\n\t\"Senha\":\"c\",\n\t\"DataCadastro\":\"2020/02/02\",\n\t\"Genero\":\"b\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -573,8 +806,18 @@
 					"response": []
 				},
 				{
-					"name": "Deletar um usuário",
+					"name": "Alterar um usuário",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDEwNjUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.Mr_IVX2EzRtI4HLuOl0UGamih6kcEF8PAzvellwAYV8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -586,7 +829,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"IdTipoUsuario\":\"\",\n\t\"NomeUsuario\":\"\",\n\t\"Email\":\"\",\n\t\"Senha\":\"\",\n\t\"DataCadastro\":\"\",\n\t\"Gemero\":\"\"\n}",
+							"raw": "{\n\t\"IdTipoUsuario\":\"2\",\n\t\"Nome\":\"a\",\n\t\"Email\":\"b\",\n\t\"Senha\":\"c\",\n\t\"DataCadastro\":\"2020/02/02\",\n\t\"Genero\":\"b\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -594,7 +837,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/usuarios/4",
+							"raw": "http://localhost:5000/api/usuarios/7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -603,7 +846,7 @@
 							"path": [
 								"api",
 								"usuarios",
-								"4"
+								"7"
 							]
 						}
 					},
@@ -612,6 +855,16 @@
 				{
 					"name": "Deletar um usuário",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDEwNjUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.Mr_IVX2EzRtI4HLuOl0UGamih6kcEF8PAzvellwAYV8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [
 							{
@@ -631,7 +884,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/usuarios/4",
+							"raw": "http://localhost:5000/api/usuarios/7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -640,7 +893,7 @@
 							"path": [
 								"api",
 								"usuarios",
-								"4"
+								"7"
 							]
 						}
 					},
@@ -655,6 +908,16 @@
 				{
 					"name": "Listar instituições",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDEwNjUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.Mr_IVX2EzRtI4HLuOl0UGamih6kcEF8PAzvellwAYV8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -676,6 +939,16 @@
 				{
 					"name": "Listar instituição por Id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDEwNjUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.Mr_IVX2EzRtI4HLuOl0UGamih6kcEF8PAzvellwAYV8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -697,11 +970,21 @@
 				{
 					"name": "Cadastrar uma nova instituição",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDEwNjUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.Mr_IVX2EzRtI4HLuOl0UGamih6kcEF8PAzvellwAYV8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"CNPJ\":\"\",\n\t\"NomeFantasia\":\"\",\n\t\"Endereco\":\"\"\n}",
+							"raw": "{\n\t\"CNPJ\":\"23273847382733\",\n\t\"NomeFantasia\":\"c\",\n\t\"Endereco\":\"l\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -727,11 +1010,21 @@
 				{
 					"name": "Alterar uma instituição",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDEwNjUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.Mr_IVX2EzRtI4HLuOl0UGamih6kcEF8PAzvellwAYV8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"CNPJ\":\"\",\n\t\"NomeFantasia\":\"\",\n\t\"Endereco\":\"\"\n}",
+							"raw": "{\n\t\"CNPJ\":\"27384756473845\",\n\t\"NomeFantasia\":\"d\",\n\t\"Endereco\":\"f\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -739,7 +1032,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/instituicoes/4",
+							"raw": "http://localhost:5000/api/instituicoes/6",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -748,7 +1041,7 @@
 							"path": [
 								"api",
 								"instituicoes",
-								"4"
+								"6"
 							]
 						}
 					},
@@ -757,6 +1050,16 @@
 				{
 					"name": "Deletar uma instituição",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1ODQxMDEwNjUsImlzcyI6Ikd1ZmkuV2ViQXBpIiwiYXVkIjoiR3VmaS5XZWJBcGkifQ.Mr_IVX2EzRtI4HLuOl0UGamih6kcEF8PAzvellwAYV8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -769,7 +1072,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/instituicoes/4",
+							"raw": "http://localhost:5000/api/instituicoes/11",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -778,7 +1081,7 @@
 							"path": [
 								"api",
 								"instituicoes",
-								"4"
+								"11"
 							]
 						}
 					},

@@ -10,6 +10,8 @@ namespace Senai.Gufi.WebApi.Manha.Interfaces
     {
         List<Presenca> Listar();
 
+        List<Presenca> Aprovacao(string status);
+
         void Situacao(int id, Presenca statusAlterado);
 
         List<Presenca> ListarMeusEventos(int? id);

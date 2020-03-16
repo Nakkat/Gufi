@@ -80,11 +80,34 @@
             </summary>
             <returns>Retorna um status code 200</returns>
         </member>
+        <member name="M:Senai.Gufi.WebApi.Manha.Controllers.PresencasController.GetById(System.Int32)">
+            <summary>
+            Lista de presenças pelo Id de um usuário específico
+            </summary>
+            <param name="id">Id do usuário que será buscad</param>
+            <returns>Retorna uma lista e um status code 200</returns>
+        </member>
         <member name="M:Senai.Gufi.WebApi.Manha.Controllers.PresencasController.GetByStatus(System.String)">
             <summary>
             Lista de presenças confirmadas e não confirmadas
             </summary>
-            <returns>Retorna um status code 200</returns>
+            <param name="status">Objeto status que será buscado</param>
+            <returns>Retorna uma lista e um status code 200</returns>
+        </member>
+        <member name="M:Senai.Gufi.WebApi.Manha.Controllers.PresencasController.InscricaoConvite(Senai.Gufi.WebApi.Manha.Domains.Presenca)">
+            <summary>
+            Cadastra uma nova presença
+            </summary>
+            <param name="novaPresenca">Objeto novaPresenca que será cadastrado</param>
+            <returns></returns>
+        </member>
+        <member name="M:Senai.Gufi.WebApi.Manha.Controllers.PresencasController.Situacao(System.Int32,Senai.Gufi.WebApi.Manha.Domains.Presenca)">
+            <summary>
+            Alterar a situação de uma presença
+            </summary>
+            <param name="id">Id da presença que será buscado</param>
+            <param name="statusAlterado">Objeto statusAlterado que será atualizado</param>
+            <returns></returns>
         </member>
         <member name="M:Senai.Gufi.WebApi.Manha.Controllers.TiposEventoController.Get">
             <summary>
@@ -219,6 +242,32 @@
             Listar as instituições
             </summary>
             <returns>Retorna uma lista das instituições</returns>
+        </member>
+        <member name="M:Senai.Gufi.WebApi.Manha.Repositories.PresencaRepository.InscricaoConvite(Senai.Gufi.WebApi.Manha.Domains.Presenca)">
+            <summary>
+            Inscrever-se num evento ou convidar outro usuário
+            </summary>
+            <param name="novaPresenca">Objeto novaPresenca que será cadastrado</param>
+        </member>
+        <member name="M:Senai.Gufi.WebApi.Manha.Repositories.PresencaRepository.Listar">
+            <summary>
+            Listar presenças
+            </summary>
+            <returns>Retorna uma lista de presenças</returns>
+        </member>
+        <member name="M:Senai.Gufi.WebApi.Manha.Repositories.PresencaRepository.ListarMeusEventos(System.Nullable{System.Int32})">
+            <summary>
+            Listar os eventos que contenham o id do meu usuário
+            </summary>
+            <param name="id">Id do usuário que será buscado</param>
+            <returns></returns>
+        </member>
+        <member name="M:Senai.Gufi.WebApi.Manha.Repositories.PresencaRepository.Situacao(System.Int32,Senai.Gufi.WebApi.Manha.Domains.Presenca)">
+            <summary>
+            Alterar a situação da presença
+            </summary>
+            <param name="id">Id da presença que será buscada</param>
+            <param name="statusAlterado">Objeto statusAlterado que será atualizado</param>
         </member>
         <member name="M:Senai.Gufi.WebApi.Manha.Repositories.TipoEventoRepository.Atualizar(System.Int32,Senai.Gufi.WebApi.Manha.Domains.TipoEvento)">
             <summary>
