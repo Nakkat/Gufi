@@ -1,2 +1,2 @@
 # sprint1-bd-Gufi
-Repositório responsável por armazenar os arquivos referentes ao banco de dados do projeto Gufi
+Projeto realizado na Escola SENAI de Informática utilizando C#, React js, SQL Server, JavaScrpit...
